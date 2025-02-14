@@ -4,14 +4,25 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                primary: "#d7a150",
-                secondary: "#283271",
-                background: "#ffffff",
+                white: "#ffffff",
+                primary: "#403f4c",
+                secondary: "#1b2432",
+                background: "#121420",
                 text: "#333333",
             },
             fontFamily: {
                 roboto: ["Roboto", "sans-serif"],
                 ubuntu: ["Ubuntu", "serif"],
+                title: ["Manrope", "sans-serif"],
+                subtitle: ["Manrope", "sans-serif"],
+                body: ["Inter", "sans-serif"],
+                code: ["Source Code Pro", "sans-serif"],
+            },
+            fontWeight: {
+                title: "600", // thick
+                subtitle: "300", // regular
+                body: "100", // thin
+                code: "300", // light
             },
         },
     },
