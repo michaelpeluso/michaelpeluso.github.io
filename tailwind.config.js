@@ -14,15 +14,24 @@ module.exports = {
                 roboto: ["Roboto", "sans-serif"],
                 ubuntu: ["Ubuntu", "serif"],
                 title: ["Manrope", "sans-serif"],
-                subtitle: ["Manrope", "sans-serif"],
+                subtitle: ["Poppins", "sans-serif"],
                 body: ["Inter", "sans-serif"],
                 code: ["Source Code Pro", "sans-serif"],
             },
             fontWeight: {
                 title: "600", // thick
-                subtitle: "300", // regular
+                subtitle: "200", // regular
                 body: "100", // thin
                 code: "300", // light
+            },
+            animation: {
+                ["infinite-slider"]: "infiniteSlider 20s linear infinite",
+            },
+            keyframes: {
+                infiniteSlider: {
+                    "0%": { transform: "translateX(0)" },
+                    "100%": { transform: "translateX(calc(-250px * 5))" },
+                },
             },
         },
     },

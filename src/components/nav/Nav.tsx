@@ -1,20 +1,21 @@
 import { useState, useEffect } from "react";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
-import { ReaderIcon, CodeIcon, BackpackIcon, StackIcon, LinkedInLogoIcon, GitHubLogoIcon, HandIcon, EnvelopeOpenIcon, SunIcon, MoonIcon } from "@radix-ui/react-icons";
+import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { SiGithub, SiHandshake, SiMaildotru } from "react-icons/si";
 
 const pageItems = [
-    { name: "Study", icon: <ReaderIcon />, path: "/study" },
-    { name: "Work", icon: <CodeIcon />, path: "/work" },
-    { name: "Career", icon: <BackpackIcon />, path: "/career" },
-    { name: "Shelf", icon: <StackIcon />, path: "/shelf" },
+    { name: "Study", path: "/study" },
+    { name: "Work", path: "/work" },
+    { name: "Career", path: "/career" },
+    { name: "Shelf", path: "/shelf" },
 ];
 
 const infoItems = [
     { name: "LinkedIn", icon: <LinkedInLogoIcon />, path: "https://www.linkedin.com/in/michaelpeluso5/" },
-    { name: "Github", icon: <GitHubLogoIcon />, path: "https://github.com/michaelpeluso" },
-    { name: "Handshake", icon: <HandIcon />, path: "https://njit.joinhandshake.com/profiles/bdzs5d" },
-    { name: "Contact", icon: <EnvelopeOpenIcon />, path: "mailto:mfpel29@gmail.com" },
+    { name: "Github", icon: <SiGithub />, path: "https://github.com/michaelpeluso" },
+    { name: "Handshake", icon: <SiHandshake />, path: "https://njit.joinhandshake.com/profiles/bdzs5d" },
+    { name: "Contact", icon: <SiMaildotru />, path: "mailto:mfpel29@gmail.com" },
 ];
 
 const Nav: React.FC = () => {
