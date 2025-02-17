@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-background;
+}
+
+.theme-title {
+    @apply text-5xl sm:text-6xl md:text-8xl text-title;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.theme-subtitle {
+    @apply text-xl md:text-3xl lg:text-3xl text-body;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+}
+
+.theme-body,
+.theme-muted,
+.theme-code {
+    @apply text-sm md:text-base lg:text-lg text-body;
+    font-family: "Funnel Sans", sans-serif;
+    color: white;
+    font-weight: 200;
+}
+
+.theme-muted {
+    @apply text-muted;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.theme-code {
+    font-family: "Source Code Pro", sans-serif;
+}
+
+.theme-link {
+    @apply text-body duration-300 hover:text-primary;
+    text-decoration-line: underline;
+    text-underline-offset: 15%;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}

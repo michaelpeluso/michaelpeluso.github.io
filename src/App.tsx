@@ -2,17 +2,35 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Landing } from "./components/landing/Landing";
 import Nav from "./components/nav/Nav";
-import { Study } from "./components/study/Study";
+import { Career } from "./components/career/Career";
+import Footer from "./components/basic/Footer";
+
+import { LinkedInLogoIcon } from "@radix-ui/react-icons";
+import { SiGithub, SiHandshake, SiMaildotru } from "react-icons/si";
+
+const pageItems = [
+    { name: "About", path: "/" },
+    { name: "Work", path: "/work" },
+    { name: "Career", path: "/career" },
+    { name: "Shelf", path: "/shelf" },
+];
+
+const infoItems = [
+    { name: "LinkedIn", icon: <LinkedInLogoIcon />, path: "https://www.linkedin.com/in/michaelpeluso5/" },
+    { name: "Github", icon: <SiGithub />, path: "https://github.com/michaelpeluso" },
+    { name: "Handshake", icon: <SiHandshake />, path: "https://njit.joinhandshake.com/profiles/bdzs5d" },
+    { name: "Contact", icon: <SiMaildotru />, path: "mailto:mfpel29@gmail.com" },
+];
 
 const App: React.FC = () => {
     return (
         <Router>
-            <div className="absolute inset-0 h-full w-full bg-transparent bg-[radial-gradient(grey,transparent_1px)] [background-size:45px_45px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_0%,transparent_150%)]"></div>
-            <Nav />
             <Routes>
                 <Route path="/" element={<Landing />} />
-                <Route path="/study" element={<Study />} />
+                <Route path="/career" element={<Career />} />
             </Routes>
+            <Nav pageItems={pageItems} infoItems={infoItems} />
+            <Footer pageItems={pageItems} infoItems={infoItems} />
         </Router>
     );
 };

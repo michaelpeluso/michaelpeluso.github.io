@@ -1,19 +1,14 @@
-import React from "react";
-import { FiArrowRight } from "react-icons/fi";
-
-const HoverList = () => {
-    const items = ["About Me", "Projects", "Experience", "Education"];
-
+const HoverList = ({ items }: { items: any[] }) => {
     return (
-        <nav className="h-screen flex justify-center items-center font-subtitle text-white">
-            <ul className="m-auto space-y-4">
+        <nav className="flex theme-subtitle text-white p-3">
+            <ul className="flex flex-col gap-1">
                 {items.map((item, index) => (
-                    <li key={index} className="relative text-[42px] leading-[1.5] group">
-                        <a href="#" className=" transition-all duration-500 ease-in-out cursor-pointer pr-10 ">
-                            {item}
+                    <li key={index} className="relative leading-[1.5] group">
+                        <a href={item.path} className=" transition-all duration-500 ease-in-out cursor-pointer pr-2 ">
+                            {item.name}
                         </a>
-                        <span className="absolute top-1/2 transform -translate-y-1/2 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <FiArrowRight className="w-6 h-6 transition-transform duration-500 group-hover:translate-x-2" />
+                        <span className="absolute top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="transition-transform duration-500 group-hover:translate-x-2">&gt;</div>
                         </span>
                     </li>
                 ))}
