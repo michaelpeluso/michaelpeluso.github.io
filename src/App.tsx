@@ -1,16 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Landing } from "./components/landing/Landing";
-import Nav from "./components/nav/Nav";
-import { Career } from "./components/career/Career";
-import Footer from "./components/basic/Footer";
-
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { SiGithub, SiHandshake, SiMaildotru } from "react-icons/si";
 
+import { Landing } from "./components/landing/Landing";
+import Nav from "./components/nav/Nav";
+import { Career } from "./components/career/Career";
+import Footer from "./components/nav/Footer";
+import Projects from "./components/projects/Projects";
+
 const pageItems = [
     { name: "About", path: "/" },
-    { name: "Work", path: "/work" },
+    { name: "Projects", path: "/projects" },
     { name: "Career", path: "/career" },
     { name: "Shelf", path: "/shelf" },
 ];
@@ -28,6 +29,7 @@ const App: React.FC = () => {
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/career" element={<Career />} />
+                <Route path="/Projects" element={<Projects />} />
             </Routes>
             <Nav pageItems={pageItems} infoItems={infoItems} />
             <Footer pageItems={pageItems} infoItems={infoItems} />

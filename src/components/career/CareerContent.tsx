@@ -1,7 +1,7 @@
 import React from "react";
 import { PageBuilder, PageItem } from "../basic/PageBuilder";
 
-const educationItems: PageItem[] = [
+const Content: PageItem[] = [
     { type: "title", text: "Experience" },
     { type: "subtitle", text: "Backend Software Developer", snippet: "Sept 2024 - Dec 2024" },
     {
@@ -52,13 +52,13 @@ const educationItems: PageItem[] = [
             </>
         ),
     },
-    { type: "subtitle", text: "I.T. Quality Assurance Technician", snippet: "Jan 2024" },
+    { type: "subtitle", text: "IT Quality Assurance Technician", snippet: "Jan 2024" },
     {
         type: "body",
         text: (
             <>
-                <a className="theme-link" href="https://www.asrcfederal.com/" target="_blank" rel="noopener noreferrer">
-                    ASRC Ferderal
+                <a className="theme-link" href="https://outsourcemyit.com/" target="_blank" rel="noopener noreferrer">
+                    Outsource My I.T.
                 </a>
                 <div className="text-muted">
                     <p>
@@ -120,21 +120,47 @@ const educationItems: PageItem[] = [
     },
 
     { type: "title", text: "University" },
-
-    { type: "subtitle", text: "Georgia Institute of Technology", snippet: "2025 - Preset" },
-    { type: "body", text: "Master of Science in Computer Science" },
-    { type: "muted", text: "Current Student" },
-    { type: "subtitle", text: "New Jersey Institute of Technology", snippet: "2022 - 2025" },
-
-    { type: "body", text: "Bachelor of Science in Information Technology" },
-    { type: "muted", text: "Minor in Computer Science" },
-    { type: "muted", text: "Minor in Web and Mobile Development" },
-    { type: "line-break" },
-    { type: "body", text: "Graduated early with Honors" },
+    { type: "subtitle", text: "Georgia Institute of Technology", snippet: "2025 - Present" },
+    {
+        type: "body",
+        text: (
+            <>
+                <div className="text-muted">
+                    <p>
+                        <span className="theme-body">Master of Science in Computer Science</span>
+                        <br />
+                        Current Student
+                        <br />
+                    </p>
+                </div>
+            </>
+        ),
+    },
+    { type: "subtitle", text: "New Jersey Institute of Technology", snippet: "2021 - 2025" },
+    {
+        type: "body",
+        text: (
+            <>
+                <div className="text-muted">
+                    <p>
+                        <span className="theme-body">Bachelor of Science in Information Technology</span>
+                        <br />
+                        Minor in Computer Science
+                        <br />
+                        Minor in Web and Mobile Development
+                        <br />
+                        <br />
+                        Graduated early with Honors
+                        <br />
+                    </p>
+                </div>
+            </>
+        ),
+    },
 ];
 
-const Education = () => {
-    return <PageBuilder items={educationItems} />;
+const CareerContent = () => {
+    return <PageBuilder items={Content} />;
 };
 
-export default Education;
+export default CareerContent;

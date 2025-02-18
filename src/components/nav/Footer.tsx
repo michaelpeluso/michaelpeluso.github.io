@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[] }) => {
     return (
-        <footer className="bg-surface py-6 mt-10">
+        <footer className="bg-shadow py-6 mt-10">
             <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
                 {/* Left - Branding */}
                 <div className="text-center md:text-left">

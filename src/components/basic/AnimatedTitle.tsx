@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useMemo } from "react";
 
 const randomChar = () => {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,./;'[]!@#$%^&*()-=_+{}:<>?";
@@ -8,76 +8,121 @@ const randomChar = () => {
 const getRandomColor = () => (Math.random() > 0.5 ? "text-primary" : "text-accent");
 
 interface AnimatedTitleProps {
-    start: string;
+    start?: string;
     end: string;
 }
 
-const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ start, end }) => {
-    const [displayedTitle, setDisplayedTitle] = useState(start.split("").map((char) => ({ char, className: "text-white" })));
+const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ start = "", end }) => {
+    // Pad the strings so they have equal length.
+    let paddedStart: string;
+    let paddedEnd: string;
+    if (start) {
+        if (start.length < end.length) {
+            paddedStart = start + " ".repeat(end.length - start.length);
+            paddedEnd = end;
+        } else if (start.length > end.length) {
+            paddedStart = start;
+            paddedEnd = end + " ".repeat(start.length - end.length);
+        } else {
+            paddedStart = start;
+            paddedEnd = end;
+        }
+    } else {
+        // Generate a random string (keeping spaces) matching end's length.
+        paddedStart = end
+            .split("")
+            .map((ch) => (ch === " " ? " " : randomChar()))
+            .join("");
+        paddedEnd = end;
+    }
+
+    // Compute initial displayed state (flat array per character)
+    const [displayedTitle, setDisplayedTitle] = useState(
+        paddedStart.split("").map((char) => ({
+            char,
+            className: "text-white",
+            isAnimating: false,
+        }))
+    );
     const [hasAnimated, setHasAnimated] = useState(false);
     const titleRef = useRef<HTMLHeadingElement>(null);
+
+    // Compute word grouping based on paddedEnd so that grouping is stable.
+    const groupIndices = useMemo(() => {
+        const groups: number[][] = [];
+        let currentGroup: number[] = [];
+        for (let i = 0; i < paddedEnd.length; i++) {
+            // Include the character in the current group.
+            currentGroup.push(i);
+            // If this character is a space, end the group.
+            if (paddedEnd[i] === " ") {
+                groups.push(currentGroup);
+                currentGroup = [];
+            }
+        }
+        if (currentGroup.length > 0) groups.push(currentGroup);
+        return groups;
+    }, [paddedEnd]);
 
     useEffect(() => {
         const handleIntersection = (entries: IntersectionObserverEntry[]) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting && entry.intersectionRatio >= 0.9 && !hasAnimated) {
-                    animateGlitch(start, end);
-                    setHasAnimated(true); // Prevent re-triggering
+                    animateGlitch(paddedStart, paddedEnd);
+                    setHasAnimated(true);
                 }
             });
         };
 
         const observer = new IntersectionObserver(handleIntersection, {
-            root: null, // Observes in relation to the viewport
-            threshold: 0.9, // Triggers when 90% of the component is visible
+            root: null,
+            threshold: 0.9,
         });
 
-        if (titleRef.current) {
-            observer.observe(titleRef.current);
-        }
+        if (titleRef.current) observer.observe(titleRef.current);
 
         return () => {
-            if (titleRef.current) {
-                observer.unobserve(titleRef.current);
-            }
+            if (titleRef.current) observer.unobserve(titleRef.current);
         };
-    }, [start, end, hasAnimated]);
+    }, [paddedStart, paddedEnd, hasAnimated]);
 
     const animateGlitch = (from: string, to: string) => {
-        const maxLength = Math.max(from.length, to.length);
-        let tempTitle = from
-            .padEnd(maxLength, " ")
-            .split("")
-            .map((char) => ({
-                char,
-                className: "text-white",
-                isAnimating: true,
-            }));
-        let finalTitle = to
-            .padEnd(maxLength, " ")
-            .split("")
-            .map((char) => ({
-                char,
-                className: "text-white",
-                isAnimating: false,
-            }));
+        const fromChars = from.split("");
+        const toChars = to.split("");
 
-        let steps = Array.from({ length: maxLength }, () => Math.floor(Math.random() * 20) + 4);
-        let delays = Array.from({ length: maxLength }, () => Math.floor(Math.random() * 100)); // Random start delays
+        let tempTitle = fromChars.map((char) => ({
+            char,
+            className: "text-white",
+            isAnimating: true,
+        }));
+
+        const finalTitle = toChars.map((char) => ({
+            char,
+            className: "text-white",
+            isAnimating: false,
+        }));
+
+        let steps = fromChars.map(() => Math.floor(Math.random() * 20) + 4);
+        let delays = fromChars.map(() => Math.floor(Math.random() * 100));
 
         const interval = setInterval(() => {
-            let updatedTitle = tempTitle.map((item, i) => {
-                if (steps[i] > 0 && delays[i] <= 0) {
+            const updatedTitle = tempTitle.map((item, index) => {
+                if (steps[index] > 0 && delays[index] <= 0) {
                     return {
                         char: Math.random() > 0.5 ? randomChar() : item.char,
                         className: getRandomColor(),
                         isAnimating: true,
                     };
-                } else if (steps[i] > 0) {
-                    delays[i] -= 10; // Reduce delay
+                } else if (steps[index] > 0) {
+                    delays[index] -= 10;
                     return item;
                 } else {
-                    return { char: finalTitle[i].char, className: "text-white", isAnimating: false };
+                    // When finished, use the final character.
+                    return {
+                        char: finalTitle[index].char,
+                        className: "text-white",
+                        isAnimating: false,
+                    };
                 }
             });
 
@@ -92,11 +137,22 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ start, end }) => {
     };
 
     return (
-        <h2 ref={titleRef} style={{ fontFamily: "'Source Code Pro', sans-serif" }}>
-            {displayedTitle.map((item, i) => (
-                <span key={i} className={item.className} style={{ display: "inline-block", width: "1ch" }}>
-                    {item.char}
-                </span>
+        <h2
+            ref={titleRef}
+            style={{
+                fontFamily: "'Source Code Pro', sans-serif",
+                display: "flex",
+                flexWrap: "wrap",
+            }}
+        >
+            {groupIndices.map((group, groupIndex) => (
+                <div key={groupIndex} style={{ display: "inline-flex", flexShrink: 0, marginRight: "0.25rem" }}>
+                    {group.map((index) => (
+                        <span key={index} className={displayedTitle[index]?.className} style={{ display: "inline-block", width: "1ch", textAlign: "center" }}>
+                            {displayedTitle[index]?.char}
+                        </span>
+                    ))}
+                </div>
             ))}
         </h2>
     );

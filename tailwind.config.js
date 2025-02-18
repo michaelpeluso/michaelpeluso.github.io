@@ -4,19 +4,19 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                background: "#0f1014", // Dark but not harsh black
-                surface: "#1B1E23", // Slightly lighter for cards, modals
-                primary: "#53b086", // main highlight
-                accent: "#54D6BE", // highlight color
+                background: "#0F1014", // Dark but not harsh black
+
+                content: "#1B1E23", // subtle card/modal color
+                shine: "#6B7784", // Reused for subtle highlights and subtitles
+                shadow: "#15171C", // Keeps depth without being too harsh
+
+                primary: "#4A9B78", // Slightly darker for a more balanced contrast
+                accent: "#4AC3AD", // Less neon, more natural
+
                 title: "#9BA8B5", // Light pastel blue for headings
                 subtitle: "#6B7784", // Muted blue-gray for subheadings
                 body: "#D0D3D7", // Soft off-white for reading
                 muted: "#868D95", // Less important info
-                button: {
-                    DEFAULT: "#2C353D", // Default button background
-                    hover: "#54D6BE", // Glow effect on hover
-                    border: "#6B7784", // Subtle contrast for outlines
-                },
             },
             animation: {
                 ["infinite-slider"]: "infiniteSlider 20s linear infinite",

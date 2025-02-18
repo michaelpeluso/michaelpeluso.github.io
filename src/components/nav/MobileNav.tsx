@@ -79,7 +79,7 @@ const MobileNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[
                         >
                             {/* Page Links */}
                             {pageItems.map(({ name, path }) => (
-                                <Link key={name} to={path} onClick={() => setIsOpen(false)} className="text-2xl theme-body hover:opacity-60 transition-opacity duration-200">
+                                <Link key={name} to={path} onClick={() => setIsOpen(false)} className="theme-body hover:opacity-60 transition-opacity duration-200 ">
                                     {name}
                                 </Link>
                             ))}

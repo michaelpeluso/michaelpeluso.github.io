@@ -1,11 +1,11 @@
 import React from "react";
 import { InfiniteSlider } from "./InfiniteSlider";
-import Education from "./Content";
+import CareerContent from "./CareerContent";
 
 export const Career = () => {
     return (
         <>
-            <Education />
+            <CareerContent />
         </>
     );
 };

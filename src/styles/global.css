@@ -22,7 +22,7 @@ body {
 .theme-body,
 .theme-muted,
 .theme-code {
-    @apply text-sm md:text-base lg:text-lg text-body;
+    @apply text-sm md:text-base lg:text-lg text-body leading-5 sm:leading-7;
     font-family: "Funnel Sans", sans-serif;
     color: white;
     font-weight: 200;
@@ -31,7 +31,6 @@ body {
 .theme-muted {
     @apply text-muted;
     font-weight: 200;
-    font-style: italic;
 }
 
 .theme-code {
@@ -41,7 +40,7 @@ body {
 .theme-link {
     @apply text-body duration-300 hover:text-primary;
     text-decoration-line: underline;
-    text-underline-offset: 15%;
+    text-underline-offset: 20%;
 }
 
 ::-webkit-scrollbar {

@@ -52,7 +52,7 @@ const TerminalTypewriter = ({ speed = 25 }) => {
         <div
             ref={containerRef}
             aria-hidden="true"
-            className="w-full h-[300px] md:h-[375px] lg:h-[450px] overflow-hidden bg-transparent relative"
+            className="w-full h-[300px] md:h-[37px] lg:h-[450px] overflow-hidden bg-transparent relative"
             style={{
                 maskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%)",
                 WebkitMaskImage: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%)",

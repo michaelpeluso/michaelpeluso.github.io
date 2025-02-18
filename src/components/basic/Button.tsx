@@ -26,20 +26,20 @@ export const Button = ({ title, link }: { title: string; link: string }) => {
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave} // Effect stays while near button
         >
-            <button ref={buttonRef} className="backdrop-blur-md h-12 w-full cursor-pointer border border-tertiary text-white transition-colors duration-300 focus:border-secondary focus:outline-none">
-                <Link to={link} className="theme-subtitle">
+            <button ref={buttonRef} className="backdrop-blur-md h-12 w-full cursor-pointer rounded-lg bg-content transition-colors duration-300 focus:border-secondary focus:outline-none">
+                <Link to={link} className="underline underline-offset-4 sm:no-underline">
                     {title}
                 </Link>
             </button>
             <button
                 disabled
                 style={{
-                    border: "1px solid #406e8e",
+                    border: "1px solid #6B7784",
                     opacity,
                     WebkitMaskImage: `radial-gradient(circle 50px at ${position.x}px ${position.y}px, black 50%, transparent 101%)`,
                 }}
                 aria-hidden="true"
-                className="pointer-events-none absolute left-0 z-10 h-12 w-full cursor-default border bg-transparent opacity-0 transition-opacity duration-500"
+                className="pointer-events-none rounded-lg absolute left-0 z-10 h-12 w-full cursor-default border bg-transparent opacity-0 transition-opacity duration-500"
             />
         </div>
     );
