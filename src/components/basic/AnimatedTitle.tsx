@@ -146,7 +146,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ start = "", end }) => {
             }}
         >
             {groupIndices.map((group, groupIndex) => (
-                <div key={groupIndex} style={{ display: "inline-flex", flexShrink: 0, marginRight: "0.25rem" }}>
+                <div key={groupIndex} style={{ display: "inline-flex", flexShrink: 0 }}>
                     {group.map((index) => (
                         <span key={index} className={displayedTitle[index]?.className} style={{ display: "inline-block", width: "1ch", textAlign: "center" }}>
                             {displayedTitle[index]?.char}

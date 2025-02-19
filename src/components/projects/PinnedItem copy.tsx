@@ -1,7 +1,6 @@
 import { useState, ReactElement, useRef, useCallback, MouseEvent } from "react";
 import { Button } from "../basic/Button";
 import { TagIcon } from "../basic/TagIcon";
-import { url } from "inspector";
 
 interface ItemProps {
     title: string;
@@ -9,7 +8,6 @@ interface ItemProps {
     description: string;
     tags: string[];
     link: string;
-    image?: string | null;
 }
 
 // Throttle function to improve performance
@@ -25,7 +23,7 @@ function throttle<T extends (...args: any[]) => any>(func: T, delay: number) {
     };
 }
 
-export const PinnedItem = ({ title, date, description, tags, link, image }: ItemProps) => {
+export const PinnedItem = ({ title, date, description, tags, link }: ItemProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [opacity, setOpacity] = useState(0);
@@ -53,8 +51,8 @@ export const PinnedItem = ({ title, date, description, tags, link, image }: Item
             const y = e.clientY - box.top;
             const centerX = box.width / 2;
             const centerY = box.height / 2;
-            const rotateX = (y - centerY) / 100;
-            const rotateY = (centerX - x) / 500;
+            const rotateX = (y - centerY) / 50;
+            const rotateY = (centerX - x) / 75;
 
             setRotate({ x: rotateX, y: rotateY });
         }, 50),
@@ -69,7 +67,7 @@ export const PinnedItem = ({ title, date, description, tags, link, image }: Item
     return (
         <div
             ref={containerRef}
-            className="relative border border-content p-6 rounded-lg shadow-lg flex flex-col md:flex-row gap-4 transition-transform duration-300 hover:scale-[1.02] overflow-hidden"
+            className="relative bg-content p-6 rounded-lg shadow-lg flex flex-col gap-2 md:gap-4 transition-transform duration-300 hover:scale-[1.02]"
             onMouseMove={(e) => {
                 handleMouseMove(e);
                 handleTilt(e);
@@ -90,33 +88,23 @@ export const PinnedItem = ({ title, date, description, tags, link, image }: Item
                 }}
             />
 
-            {/* Left Content */}
-            <div className="relative z-10 sm:w-[50%]">
+            <div>
                 <h2 className="theme-subtitle">{title}</h2>
-                <p className="theme-body pt-2">
-                    {description}
-                    <span className="theme-muted xs:text-xl md:text-base italic pl-3 md:pl-5">{date}</span>
-                </p>
+                <p className="theme-muted">{date}</p>
+            </div>
+            <p className="theme-body">{description}</p>
 
-                {/* Tags Section */}
-                <div className="flex flex-wrap pt-2 gap-2 md:gap-3 my-2">
-                    {tags.map((name, i) => (
-                        <TagIcon key={i} iconName={name} />
-                    ))}
-                </div>
-
-                {/* Button */}
-                <div className="mt-auto gap-3 pt-3">
-                    <Button link={link} title="View Code" />
-                </div>
+            {/* Tags Section */}
+            <div className="flex flex-wrap gap-2 md:gap-3 my-2">
+                {tags.map((name, i) => (
+                    <TagIcon key={i} iconName={name} />
+                ))}
             </div>
 
-            {/* Image */}
-            {image && (
-                <div className="hidden md:block absolute left-[55%] top-[-10%] w-[60%] h-[30rem] pointer-events-none">
-                    <img src={image} alt="Project Image" className="w-full h-full object-cover object-left-top rotate-12 opacity-80" />
-                </div>
-            )}
+            {/* Button */}
+            <div className="mt-auto flex items-center justify-center gap-3">
+                <Button link={link} title="View Code" />
+            </div>
         </div>
     );
 };

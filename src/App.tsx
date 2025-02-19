@@ -5,7 +5,7 @@ import { SiGithub, SiHandshake, SiMaildotru } from "react-icons/si";
 
 import { Landing } from "./components/landing/Landing";
 import Nav from "./components/nav/Nav";
-import { Career } from "./components/career/Career";
+import Career from "./components/career/Career";
 import Footer from "./components/nav/Footer";
 import Projects from "./components/projects/Projects";
 

@@ -1,6 +1,45 @@
 import React, { useState } from "react";
-import { SiC, SiR, SiJavascript, SiPython, SiOpengl, SiJupyter, SiHtml5, SiBootstrap, SiMysql, SiFlask, SiSqlite, SiOpenai, SiLangchain } from "react-icons/si";
-import { FaDatabase, FaJava } from "react-icons/fa";
+import {
+    // Programming & Development
+    SiJavascript,
+    SiPython,
+    SiC,
+    SiCplusplus,
+    SiR,
+    SiPhp,
+    SiNodedotjs,
+    SiReact,
+    // AI & Data Science
+    SiOpenai,
+    SiLangchain,
+    // Tools & Platforms
+    SiGooglecloud,
+    SiAmazonwebservices,
+    SiDocker,
+    SiVirtualbox,
+    SiRabbitmq,
+    SiGit,
+    SiLinux,
+    // Database Management
+    SiPostman,
+    SiMongodb,
+    SiMysql,
+    SiOracle,
+    SiPostgresql,
+    SiPhpmyadmin,
+    // Additional
+    SiHtml5,
+    SiCss3,
+    SiBootstrap,
+    SiTailwindcss,
+    SiFlask,
+    SiSqlite,
+    SiNumpy,
+    SiPandas,
+    SiWordpress,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+import { TbHexagonLetterKFilled } from "react-icons/tb";
 
 interface TagIconProps {
     iconName: string;
@@ -9,21 +48,45 @@ interface TagIconProps {
 }
 
 export const iconsMap: Record<string, React.FC<{ className?: string }>> = {
-    C: SiC,
-    R: SiR,
-    Java: FaJava,
-    Javascript: SiJavascript,
+    // Programming & Development
+    JavaScript: SiJavascript,
     Python: SiPython,
-    Opengl: SiOpengl,
-    Jupyter: SiJupyter,
-    Html5: SiHtml5,
-    Bootstrap: SiBootstrap,
-    Mysql: SiMysql,
-    Flask: SiFlask,
-    Sqlite: SiSqlite,
+    Java: FaJava,
+    C: SiC,
+    Cpp: SiCplusplus,
+    R: SiR,
+    PHP: SiPhp,
+    Node: SiNodedotjs,
+    React: SiReact,
+    // AI & Data Science
     Openai: SiOpenai,
     Langchain: SiLangchain,
-    Databases: FaDatabase,
+    // Tools & Platforms
+    GCP: SiGooglecloud,
+    AWS: SiAmazonwebservices,
+    Docker: SiDocker,
+    VirtualBox: SiVirtualbox,
+    RabbitMQ: SiRabbitmq,
+    Git: SiGit,
+    Linux: SiLinux,
+    Postman: SiPostman,
+    // Database Management
+    MongoDB: SiMongodb,
+    MySQL: SiMysql,
+    OracleSQL: SiOracle,
+    Postgres: SiPostgresql,
+    phpMyAdmin: SiPhpmyadmin,
+    // Additional
+    HTML: SiHtml5,
+    CSS: SiCss3,
+    Bootstrap: SiBootstrap,
+    Tailwind: SiTailwindcss,
+    Flask: SiFlask,
+    Sqlite: SiSqlite,
+    Numpy: SiNumpy,
+    Pandas: SiPandas,
+    Kaseya: TbHexagonLetterKFilled,
+    WordPress: SiWordpress,
 };
 
 export const TagIcon: React.FC<TagIconProps> = ({ iconName, onClick, className = "" }: { iconName: string; onClick?: React.MouseEventHandler<HTMLDivElement>; className?: string }) => {

@@ -23,9 +23,9 @@ body {
 .theme-muted,
 .theme-code {
     @apply text-sm md:text-base lg:text-lg text-body leading-5 sm:leading-7;
-    font-family: "Funnel Sans", sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: white;
-    font-weight: 200;
+    font-weight: 100;
 }
 
 .theme-muted {
