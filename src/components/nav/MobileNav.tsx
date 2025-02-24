@@ -35,7 +35,7 @@ const MobileNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[
         <nav className="w-full h-full p-4 z-100">
             {/* Show Social on "/" */}
             {location.pathname === "/" && (
-                <div className="flex top-4 flex-col gap-4 mt-1 left-4 text-white">
+                <div className="absolute flex top-4 flex-col gap-4 mt-1 left-4 text-white">
                     {infoItems.map(({ name, icon, path }) => (
                         <Link key={name} to={path} onClick={() => setIsOpen(false)} className="block hover:opacity-60 transition-opacity duration-200">
                             {icon}
@@ -79,12 +79,12 @@ const MobileNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[
                         >
                             {/* Page Links */}
                             {pageItems.map(({ name, path }) => (
-                                <Link key={name} to={path} onClick={() => setIsOpen(false)} className="theme-body hover:opacity-60 transition-opacity duration-200 ">
+                                <Link key={name} to={path} onClick={() => setIsOpen(false)} className="theme-body hover:opacity-60 transition-opacity duration-200" style={{ fontSize: "1.25rem" }}>
                                     {name}
                                 </Link>
                             ))}
 
-                            <div className="flex flex-col gap-4 mt-5 pt-5 text-white">
+                            <div className="flex flex-col gap-5 mt-5 pt-5 text-white">
                                 {infoItems.map(({ name, icon, path }) => (
                                     <Link key={name} to={path} onClick={() => setIsOpen(false)} className="block hover:opacity-60 transition-opacity duration-200">
                                         {icon}

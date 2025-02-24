@@ -6,21 +6,21 @@ import { Link } from "react-router-dom";
 const fullStackProjects = [
     {
         title: "Wallet Network",
-        alert: "pinned",
+        alert: "featured",
         date: "Dec 2024",
         description: "A secure digital wallet equiped with seamless fund transfers, bank account integration, and real-time transaction management within a scalable financial system.",
         link: "https://github.com/michaelpeluso/Wallet-Netowrk",
     },
     {
         title: "Git Guru",
-        alert: "pinned",
+        alert: "featured",
         date: "May 2024",
         description: "An AI-powered tool delivering instant programmatic support and automating README generation for GitHub repositories through text embedding, retrieval-augmented generation, and vector search.",
         link: "https://github.com/michaelpeluso/git-guru",
     },
     {
         title: "BookQuest",
-        alert: "pinned",
+        alert: "featured",
         date: "May 2024",
         description: "A collaborative web application with a scalable Linux-based deployment system, multi-environment clustering, and efficient message queue handling.",
         link: "https://github.com/IT490-Tech-Team/IT490-Project",

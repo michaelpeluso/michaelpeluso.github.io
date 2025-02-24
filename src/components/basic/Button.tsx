@@ -31,16 +31,6 @@ export const Button = ({ title, link }: { title: string; link: string }) => {
                     {title}
                 </button>
             </Link>
-            <button
-                disabled
-                style={{
-                    border: "1px solid #6b7784",
-                    opacity,
-                    WebkitMaskImage: `radial-gradient(circle 50px at ${position.x}px ${position.y}px, black 50%, transparent 101%)`,
-                }}
-                aria-hidden="true"
-                className="pointer-events-none rounded-lg absolute left-0 z-10 h-12 w-full cursor-default border bg-transparent opacity-0 transition-opacity duration-500"
-            />
         </div>
     );
 };

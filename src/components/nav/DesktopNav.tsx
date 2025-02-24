@@ -7,9 +7,9 @@ const DesktopNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any
     return (
         <nav className="fixed top-0 left-0 text-white theme-body">
             {/* Socials */}
-            <div className="absolute top-2 h-full w-[50px] flex flex-col items-center gap-6 p-4">
+            <div className="absolute top-2 h-full flex flex-col items-center gap-6 p-4">
                 {infoItems.map(({ name, icon, path }) => (
-                    <a key={name} href={path} target="_blank" rel="noopener noreferrer" className="theme-link text-white">
+                    <a key={name} href={path} target="_blank" rel="noopener noreferrer" className="theme-link">
                         {icon}
                     </a>
                 ))}
@@ -22,7 +22,7 @@ const DesktopNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any
                         return (
                             <li key={name} className="relative flex items-center justify-center w-[80px]">
                                 {isActive ? (
-                                    <CircleIcon className="w-3.5 h-3.5 text-primary" />
+                                    <CircleIcon className="w-4 h-4 text-primary" />
                                 ) : (
                                     <Link to={path} className="theme-link" style={{ textDecoration: "none" }}>
                                         <span>{name}</span>
