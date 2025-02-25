@@ -7,7 +7,7 @@ body {
 }
 
 .theme-title {
-    @apply text-5xl sm:text-6xl md:text-8xl text-title;
+    @apply text-4xl sm:text-6xl md:text-8xl text-title;
     font-family: "Space Grotesk", sans-serif;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -20,11 +20,9 @@ body {
 }
 
 .theme-body,
-.theme-muted,
-.theme-code {
+.theme-muted {
     @apply text-sm md:text-base lg:text-lg text-body leading-5 sm:leading-7;
     font-family: "Open Sans", sans-serif;
-    color: white;
     font-weight: 100;
 }
 
@@ -34,7 +32,9 @@ body {
 }
 
 .theme-code {
+    @apply text-body;
     font-family: "Source Code Pro", sans-serif;
+    font-weight: 300;
 }
 
 .theme-link {

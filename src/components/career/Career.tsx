@@ -18,7 +18,7 @@ const Content: PageItem[] = [
         type: "body",
         text: (
             <>
-                <Tags tags={["AWS", "Openai", "MongoDB", "Node", "JavaScript", "Postman"]} />
+                <Tags tags={["AWS", "OpenAI", "MongoDB", "Node", "JavaScript", "Postman"]} />
                 <a className="theme-link" href="https://gamerun.ai/" target="_blank" rel="noopener noreferrer">
                     GameRun
                 </a>
@@ -45,7 +45,7 @@ const Content: PageItem[] = [
         type: "body",
         text: (
             <>
-                <Tags tags={["Openai", "Python", "Pandas", "Numpy", "Sqlite"]} />
+                <Tags tags={["OpenAI", "Python", "Pandas", "Numpy", "Sqlite"]} />
                 <a className="theme-link" href="https://www.asrcfederal.com/" target="_blank" rel="noopener noreferrer">
                     ASRC Ferderal
                 </a>
@@ -91,14 +91,14 @@ const Content: PageItem[] = [
         type: "body",
         text: (
             <>
-                <Tags tags={["GCP", "JavaScript", "HTML", "Bootstrap"]} />
+                <Tags tags={["GoogleCloud", "JavaScript", "HTML", "Bootstrap"]} />
                 <a className="theme-link" href="https://theguitarshop.co/" target="_blank" rel="noopener noreferrer">
                     The Guitar Shop
                 </a>
                 <div className="text-muted">
                     <p>
                         <br />
-                        Singlehandedly designed and developed a custom <span className="text-primary">12-page</span> company website managed via Google Cloud Platform.
+                        Singlehandedly designed and developed a custom <span className="text-primary">12-page</span> company website managed via GoogleCloud Platform.
                         <br />
                         <br />
                         Deployed a dynamically updating product library and filtering system for 100+ products, boosting customer engagement and sales.

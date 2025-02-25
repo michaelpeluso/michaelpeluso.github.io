@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AnimatedTitle from "../basic/AnimatedTitle";
 
-const titles = ["Software Development", "Full-Stack Web Architecture", "Machine Learning", "Cloud Solutions", "Data Science", "Artificial Intelligence", "DevOps & Systems Architecture", "Computer Science", "Information Technology"];
+const titles = ["Software Engineering", "Computer Science", "Information Technology", "Website Development", "Machine Learning", "Data Science", "Artificial Intelligence", "Cloud Computing", "DevOps & Systems Architecture"];
 
 const Hero = () => {
     const [currentTitle, setCurrentTitle] = useState(titles[0]);
@@ -29,13 +29,15 @@ const Hero = () => {
     }, [index, isFirstLoad]);
 
     return (
-        <div className="text-white">
-            <h1 className="theme-title text-4xl md:text-6xl lg:text-9xl translate-y-6">Michael Peluso</h1>
-            <div className="theme-code text-2xl md:text-3xl lg:text-4xl my-3 text-white">{isFirstLoad ? <h2>{currentTitle}</h2> : <AnimatedTitle key={animationKey} start={currentTitle} end={nextTitle} />}</div>
-            <p className="theme-body max-w-2xl">
-                Hello there! I'm Michael, and I'm passionate about building innovative software applications and exploring experimental technology solutions. While pursuing my graduate degree in Computer Science at Georgia Tech, I decided to share
-                some of my work online. Feel free to explore my skills, check out my projects, and maybe stay a while...
-            </p>
+        <div className="min-h-screen flex flex-col justify-end w-full gap-2 lg:gap-4 p-8 pb-32 md:p-14 md:gap-3">
+            <h1 className="theme-title" style={{ margin: 0, padding: 0 }}>
+                Michael Peluso
+            </h1>
+            <div className="theme-code text-lg md:text-3xl lg:text-4xl">{isFirstLoad ? <h2>{currentTitle}</h2> : <AnimatedTitle key={animationKey} start={currentTitle} end={nextTitle} />}</div>
+            <div className="theme-body max-w-4xl text-lg md:text-xl lg:text-2xl" style={{ letterSpacing: "0.05rem" }}>
+                <p>Hello there! I'm Michael, and I'm passionate about building innovative software applications and exploring experimental technology solutions.</p>
+                <p className="mt-3">While pursuing my graduate degree in Computer Science at Georgia Tech, I decided to share some of my work online. Feel free to explore my skills, check out my projects, and maybe stay a while...</p>{" "}
+            </div>
         </div>
     );
 };

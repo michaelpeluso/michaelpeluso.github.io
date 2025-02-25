@@ -16,7 +16,7 @@ const pinnedProjects = [
         title: "Git Guru",
         date: "May 2024",
         description: "An AI-powered tool delivering instant programmatic support and automating README generation for GitHub repositories through text embedding, retrieval-augmented generation, and vector search.",
-        tags: ["Python", "Sqlite", "Flask", "Openai", "Langchain"],
+        tags: ["Python", "Sqlite", "Flask", "OpenAI", "Langchain"],
         link: "https://github.com/michaelpeluso/git-guru",
         image: require("../../assets/images/pinned-projects/git-guru.png"),
     },

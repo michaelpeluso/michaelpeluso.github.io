@@ -155,7 +155,7 @@ const gameDevProjects = [
 
 export const ProjectList = () => {
     const content: PageItem[] = [
-        { type: "title", text: "My Full Portfolio" },
+        { type: "title", text: "All Projects" },
         {
             type: "body",
             text: (

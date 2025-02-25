@@ -9,13 +9,13 @@ import { FaEnvelope } from "react-icons/fa";
 const pageItems = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Projects", path: "/projects" },
+    { name: "Projects", path: "/portfolio" },
     { name: "Career", path: "/career" },
-    { name: "Shelf", path: "/shelf" },
+    //{ name: "Shelf", path: "/shelf" },
 ];
 
 const infoItems = [
-    { name: "LinkedIn", icon: <LinkedInLogoIcon />, path: "https://www.linkedin.com/in/michaelpeluso5/" },
+    { name: "LinkedIn", icon: <LinkedInLogoIcon className="color" />, path: "https://www.linkedin.com/in/michaelpeluso5/" },
     { name: "Github", icon: <SiGithub />, path: "https://github.com/michaelpeluso" },
     { name: "Handshake", icon: <SiHandshake />, path: "https://njit.joinhandshake.com/profiles/bdzs5d" },
     { name: "Contact", icon: <FaEnvelope />, path: "mailto:mfpel29@gmail.com" },

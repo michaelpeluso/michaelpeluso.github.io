@@ -37,9 +37,12 @@ import {
     SiNumpy,
     SiPandas,
     SiWordpress,
+    SiApache,
+    SiVmware,
+    SiExpress,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
-import { TbHexagonLetterKFilled } from "react-icons/tb";
+import { TbHexagonLetterKFilled, TbBrandCSharp } from "react-icons/tb";
 
 interface TagIconProps {
     iconName: string;
@@ -54,15 +57,16 @@ export const iconsMap: Record<string, React.FC<{ className?: string }>> = {
     Java: FaJava,
     C: SiC,
     Cpp: SiCplusplus,
+    CSharp: TbBrandCSharp,
     R: SiR,
     PHP: SiPhp,
     Node: SiNodedotjs,
     React: SiReact,
     // AI & Data Science
-    Openai: SiOpenai,
+    OpenAI: SiOpenai,
     Langchain: SiLangchain,
     // Tools & Platforms
-    GCP: SiGooglecloud,
+    GoogleCloud: SiGooglecloud,
     AWS: SiAmazonwebservices,
     Docker: SiDocker,
     VirtualBox: SiVirtualbox,
@@ -87,6 +91,9 @@ export const iconsMap: Record<string, React.FC<{ className?: string }>> = {
     Pandas: SiPandas,
     Kaseya: TbHexagonLetterKFilled,
     WordPress: SiWordpress,
+    Apache: SiApache,
+    VMware: SiVmware,
+    Express: SiExpress,
 };
 
 export const TagIcon: React.FC<TagIconProps> = ({ iconName, onClick, className = "" }: { iconName: string; onClick?: React.MouseEventHandler<HTMLDivElement>; className?: string }) => {

@@ -1,7 +1,7 @@
 import { PinnedProjects } from "./PinnedProjects";
 import { ProjectList } from "./ProjectList";
 
-function Projects() {
+function Portfolio() {
     return (
         <>
             <PinnedProjects />
@@ -10,4 +10,4 @@ function Projects() {
     );
 }
 
-export default Projects;
+export default Portfolio;

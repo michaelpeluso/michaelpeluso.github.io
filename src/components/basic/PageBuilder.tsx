@@ -117,7 +117,7 @@ const SubtitleSection: React.FC<SubtitleSectionProps> = ({ subtitleItem }) => {
         <div ref={sectionRef} className="relative flex flex-col gap-4 my-20">
             {/* Subtitle */}
             <div className="flex flex-col pl-6">
-                <h2 className="theme-subtitle px-1 md:px-3">
+                <h2 className="theme-subtitle ">
                     <AnimatedTitle end={typeof subtitleItem.subtitle === "string" ? subtitleItem.subtitle : ""} />
                 </h2>
                 {subtitleItem.snippet && <span className="text-muted italic">{subtitleItem.snippet}</span>}
