@@ -40,7 +40,7 @@ const GroupedSkills = () => {
                             <TagIcon key={i} iconName={name} />
                         ))}
                     </div>
-                    <p>{group.body}</p>
+                    <p className="theme-muted">{group.body}</p>
                 </div>
             ))}
         </div>

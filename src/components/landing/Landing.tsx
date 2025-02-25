@@ -3,6 +3,8 @@ import DynamicTerminal from "./DynamicTerminal";
 import Hero from "./Hero";
 import GroupedSkills from "./GroupedSkills";
 import Separator from "../basic/Separator";
+import Highlights from "./Highlights";
+import Timeline from "./Timeline";
 
 const Landing = () => {
     return (
@@ -28,7 +30,15 @@ const Landing = () => {
                 <Separator />
             </div>
 
+            <Highlights />
+
+            <Separator />
+
             <GroupedSkills />
+
+            <Separator />
+
+            <Timeline />
         </>
     );
 };

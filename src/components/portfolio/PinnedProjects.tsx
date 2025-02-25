@@ -1,7 +1,8 @@
 import React from "react";
-import { PinnedItem } from "./PinnedItem";
-import { iconsMap } from "../basic/TagIcon";
+import SpecialContainer from "../basic/SpecialContainer";
+import { TagIcon } from "../basic/TagIcon";
 import PageBuilder, { PageItem } from "../basic/PageBuilder";
+import { Button } from "../basic/Button";
 
 const pinnedProjects = [
     {
@@ -47,12 +48,37 @@ const Content: PageItem[] = [
     {
         type: "body",
         text: (
-            <div className="mx-auto">
-                <div className="flex flex-col gap-6">
-                    {pinnedProjects.map((project, index) => (
-                        <PinnedItem key={index} {...project} />
-                    ))}
-                </div>
+            <div className="flex flex-col gap-6">
+                {pinnedProjects.map((project) => (
+                    <SpecialContainer>
+                        <div className="relative z-10 sm:w-[50%]">
+                            <h2 className="theme-subtitle">{project.title}</h2>
+                            <p className="theme-body pt-2">
+                                {project.description}
+                                <span className="theme-muted xs:text-xl md:text-base italic pl-3 md:pl-5">{project.date}</span>
+                            </p>
+
+                            {/* Tags Section */}
+                            <div className="flex flex-wrap pt-2 gap-2 md:gap-3 my-2">
+                                {project.tags.map((name, i) => (
+                                    <TagIcon key={i} iconName={name} />
+                                ))}
+                            </div>
+
+                            {/* Button */}
+                            <div className="mt-auto gap-3 pt-3">
+                                <Button link={project.link} title="View Code" />
+                            </div>
+                        </div>
+
+                        {/* Image */}
+                        {project.image && (
+                            <div className="hidden md:block absolute left-[55%] top-[-10%] w-[60%] h-[30rem] pointer-events-none">
+                                <img src={project.image} alt="Project Image" className="w-full h-full object-cover object-left-top rotate-12 opacity-80" />
+                            </div>
+                        )}
+                    </SpecialContainer>
+                ))}
             </div>
         ),
     },
