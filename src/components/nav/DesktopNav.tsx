@@ -5,7 +5,7 @@ const DesktopNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any
     const location = useLocation();
 
     return (
-        <nav className="fixed top-0 left-0 text-white theme-body">
+        <nav className="fixed top-0 left-0 theme-body xl:text-xl">
             {/* Socials */}
             <div className="absolute top-2 h-full flex flex-col items-center gap-6 p-4">
                 {infoItems.map(({ name, icon, path }) => (
@@ -22,7 +22,7 @@ const DesktopNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any
                         return (
                             <li key={name} className="relative flex items-center justify-center w-[80px]">
                                 {isActive ? (
-                                    <CircleIcon className="w-4 h-4 text-primary" />
+                                    <CircleIcon className="w-5 h-5 text-primary" />
                                 ) : (
                                     <Link to={path} className="theme-link" style={{ textDecoration: "none" }}>
                                         <span>{name}</span>

@@ -24,7 +24,7 @@ const Footer = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[] }
                 </nav>
 
                 {/* Right - Social Media Links */}
-                <div className="flex space-x-4">
+                <div className="flex space-x-4 lg:text-xl">
                     {infoItems.map((item) => (
                         <a key={item.name} href={item.path} target="_blank" rel="noopener noreferrer" aria-label={item.name} className="theme-link">
                             {item.icon}
