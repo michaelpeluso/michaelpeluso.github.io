@@ -168,7 +168,14 @@ const Content: PageItem[] = [
                         Minor in Web and Mobile Development
                         <br />
                         <br />
-                        Graduated early with Honors
+                        GPA: 3.68
+                        <br />
+                        <br />
+                        Albert Dorman Honors College
+                        <br />
+                        Dean's Scholars Program
+                        <br />
+                        Graduated early
                         <br />
                     </p>
                 </div>
