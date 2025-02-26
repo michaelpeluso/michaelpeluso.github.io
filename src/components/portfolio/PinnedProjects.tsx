@@ -73,7 +73,7 @@ const Content: PageItem[] = [
 
                         {/* Image */}
                         {project.image && (
-                            <div className="hidden md:block absolute left-[55%] top-[-10%] w-[60%] h-[30rem] pointer-events-none">
+                            <div className="hidden md:block absolute left-[55%] top-[-20%] w-[60%] h-[30rem] pointer-events-none">
                                 <img src={project.image} alt="Project Image" className="w-full h-full object-cover object-left-top rotate-12 opacity-80" />
                             </div>
                         )}

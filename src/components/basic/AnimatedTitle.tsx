@@ -40,7 +40,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ start = "", end }) => {
     const [displayedTitle, setDisplayedTitle] = useState(
         paddedStart.split("").map((char) => ({
             char,
-            className: "text-white",
+            className: "text-subtitle",
             isAnimating: false,
         }))
     );
@@ -92,13 +92,13 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ start = "", end }) => {
 
         let tempTitle = fromChars.map((char) => ({
             char,
-            className: "text-white",
+            className: "text-subtitle",
             isAnimating: true,
         }));
 
         const finalTitle = toChars.map((char) => ({
             char,
-            className: "text-white",
+            className: "text-subtitle",
             isAnimating: false,
         }));
 
@@ -120,7 +120,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({ start = "", end }) => {
                     // When finished, use the final character.
                     return {
                         char: finalTitle[index].char,
-                        className: "text-white",
+                        className: "text-subtitle",
                         isAnimating: false,
                     };
                 }

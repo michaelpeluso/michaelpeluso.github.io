@@ -10,7 +10,7 @@ const GroupedSkills = () => {
         },
         {
             title: "Web Development",
-            skills: ["HTML", "Node", "Express", "React", "Tailwind", "Flask", "Apache", "WordPress"],
+            skills: ["Node", "Express", "React", "TypeScript", "Tailwind", "Flask", "Apache", "WordPress"],
             body: "With a minor in web development at NJIT, I've gained extensive experience designing both front-end and back-end systems. I’ve worked on projects using modern technologies like Flask, Node, and React.",
         },
         {

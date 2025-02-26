@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FaJava } from "react-icons/fa";
+import { TbHexagonLetterKFilled, TbBrandCSharp } from "react-icons/tb";
 import {
     // Programming & Development
     SiJavascript,
@@ -40,9 +42,8 @@ import {
     SiApache,
     SiVmware,
     SiExpress,
+    SiTypescript,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
-import { TbHexagonLetterKFilled, TbBrandCSharp } from "react-icons/tb";
 
 interface TagIconProps {
     iconName: string;
@@ -94,6 +95,7 @@ export const iconsMap: Record<string, React.FC<{ className?: string }>> = {
     Apache: SiApache,
     VMware: SiVmware,
     Express: SiExpress,
+    TypeScript: SiTypescript,
 };
 
 export const TagIcon: React.FC<TagIconProps> = ({ iconName, onClick, className = "" }: { iconName: string; onClick?: React.MouseEventHandler<HTMLDivElement>; className?: string }) => {
@@ -107,7 +109,7 @@ export const TagIcon: React.FC<TagIconProps> = ({ iconName, onClick, className =
             {/* Render the icon */}
             <IconComponent className={`w-4 h-4 md:w-5 md:h-5 ${className}`} />
             <div
-                className={`absolute left-1/2 -translate-x-1/2 bg-shadow text-white text-xs px-2 py-1 rounded-md shadow-md transition-all duration-200 ease-out pointer-events-none ${
+                className={`absolute left-1/2 -translate-x-1/2 bg-shadow text-body text-xs px-2 py-1 rounded-md shadow-md transition-all duration-200 ease-out pointer-events-none ${
                     showTooltip ? "opacity-100 scale-100 -top-8" : "opacity-0 scale-90  -top-7"
                 }`}
             >

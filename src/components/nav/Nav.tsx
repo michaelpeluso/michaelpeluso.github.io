@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import DesktopNav from "./DesktopNav";
 import Footer from "./Footer";
 import MobileNav from "./MobileNav";
@@ -8,10 +9,8 @@ import { FaEnvelope, FaFileAlt } from "react-icons/fa";
 
 const pageItems = [
     { name: "Home", path: "/" },
-    //{ name: "About", path: "/about" },
     { name: "Portfolio", path: "/portfolio" },
     { name: "Career", path: "/career" },
-    //{ name: "Shelf", path: "/shelf" },
 ];
 
 const infoItems = [
@@ -23,13 +22,41 @@ const infoItems = [
 ];
 
 const Nav = () => {
+    const [isLightMode, setIsLightMode] = useState(false);
+
+    // Toggle theme function
+    const toggleTheme = () => {
+        setIsLightMode(!isLightMode);
+        document.body.classList.toggle("light-mode", !isLightMode);
+    };
+
+    // Sync with localStorage on load
+    useEffect(() => {
+        if (localStorage.getItem("theme") === "light") {
+            setIsLightMode(true);
+            document.body.classList.add("light-mode");
+        } else {
+            setIsLightMode(false);
+            document.body.classList.remove("light-mode");
+        }
+    }, []);
+
+    // Save the theme preference to localStorage
+    useEffect(() => {
+        if (isLightMode) {
+            localStorage.setItem("theme", "light");
+        } else {
+            localStorage.removeItem("theme");
+        }
+    }, [isLightMode]);
+
     return (
         <>
             <div className="hidden md:block">
-                <DesktopNav pageItems={pageItems} infoItems={infoItems} />
+                <DesktopNav pageItems={pageItems} infoItems={infoItems} isLightMode={isLightMode} toggleTheme={toggleTheme} />
             </div>
             <div className="block md:hidden">
-                <MobileNav pageItems={pageItems} infoItems={infoItems} />
+                <MobileNav pageItems={pageItems} infoItems={infoItems} isLightMode={isLightMode} toggleTheme={toggleTheme} />
             </div>
 
             <Footer pageItems={pageItems} infoItems={infoItems} />

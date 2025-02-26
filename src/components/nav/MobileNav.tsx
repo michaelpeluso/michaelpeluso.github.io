@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { FaSun, FaMoon } from "react-icons/fa";
 
-const MobileNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[] }) => {
+const MobileNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageItems: any[]; infoItems: any[]; isLightMode: boolean; toggleTheme: () => void }) => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
 
@@ -90,6 +91,15 @@ const MobileNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[
                                         {name}
                                     </Link>
                                 ))}
+                            </div>
+
+                            {/* Theme Toggle Icon (Sun/Moon) */}
+                            <div className="mt-6 cursor-pointer" onClick={toggleTheme}>
+                                {isLightMode ? (
+                                    <FaMoon className="w-6 h-6 text-body-light" /> // Moon icon for light mode
+                                ) : (
+                                    <FaSun className="w-6 h-6 text-body" /> // Sun icon for dark mode
+                                )}
                             </div>
                         </div>
                     </div>
