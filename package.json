@@ -2,7 +2,7 @@
     "name": "my-portfolio",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://michaelpeluso.github.io/new-portfolio",
+    "homepage": "https://michaelpeluso.github.io",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dependencies": {
