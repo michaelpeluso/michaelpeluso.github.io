@@ -52,7 +52,7 @@ const MobileNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageIte
                         e.stopPropagation(); // Prevents click event from propagating
                         setIsOpen(!isOpen);
                     }}
-                    className="text-white text-3xl focus:outline-none"
+                    className="text-body mobile-menu text-3xl focus:outline-none"
                     aria-label="Toggle menu"
                     aria-expanded={isOpen}
                     aria-controls="mobile-menu"
@@ -62,7 +62,7 @@ const MobileNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageIte
 
                 {/* Mobile Menu Overlay */}
                 {isOpen && (
-                    <div className="fixed inset-0 bg-background/75 backdrop-blur-lg flex items-center justify-center">
+                    <div className="fixed inset-0 bg-background/75 mobile-menu backdrop-blur-lg flex items-center justify-center">
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -96,7 +96,7 @@ const MobileNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageIte
                             {/* Theme Toggle Icon (Sun/Moon) */}
                             <div className="mt-6 cursor-pointer" onClick={toggleTheme}>
                                 {isLightMode ? (
-                                    <FaMoon className="w-6 h-6 text-body-light" /> // Moon icon for light mode
+                                    <FaMoon className="w-6 h-6 text-body-light mobile-menu" /> // Moon icon for light mode
                                 ) : (
                                     <FaSun className="w-6 h-6 text-body" /> // Sun icon for dark mode
                                 )}

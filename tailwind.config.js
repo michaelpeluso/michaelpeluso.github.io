@@ -20,7 +20,7 @@ module.exports = {
 
                 // light mode palette
                 "background-light": "#edf1f7", // Almost white, soft background
-                "content-light": "#949ca6", // Crisp white for content
+                "content-light": "#a9b2ba", // Crisp white for content
                 "shine-light": "#8F99A9", // Light grayish-blue for subtle highlights
                 "shadow-light": "#BCC7D1", // Very light gray for soft shadows
                 "title-light": "#2F3D47", // Dark slate blue for headings

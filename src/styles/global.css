@@ -52,7 +52,8 @@ body.light-mode {
 body.light-mode .bg-content {
     @apply bg-content-light;
 }
-body.light-mode .text-shine {
+body.light-mode .text-shine,
+body.light-mode .mobile-menu {
     @apply text-shine-light;
 }
 body.light-mode .bg-shine {
