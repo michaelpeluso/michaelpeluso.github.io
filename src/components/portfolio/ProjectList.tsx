@@ -176,7 +176,9 @@ export const ProjectList = () => {
             text: (
                 <div className="flex flex-col gap-6">
                     {fullStackProjects.map((project, index) => (
-                        <ListItem key={index} {...project} />
+                        <div id={project.title.replace(/\s+/g, "").toLowerCase()}>
+                            <ListItem key={index} {...project} />
+                        </div>
                     ))}
                 </div>
             ),

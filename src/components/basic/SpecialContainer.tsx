@@ -40,7 +40,7 @@ const SpecialContainer = ({ children, className }: ContainerProps) => {
     return (
         <div
             ref={containerRef}
-            className={`relative border border-content p-6 rounded-lg shadow-lg flex transition-transform duration-300 hover:scale-[1.02] overflow-hidden ${className}`}
+            className={`relative border border-content p-6 rounded-xl shadow-lg flex transition-transform duration-300 hover:scale-[1.02] overflow-hidden ${className}`}
             onMouseMove={(e) => {
                 handleMouseMove(e);
                 handleTilt(e);

@@ -32,10 +32,10 @@ const MobileNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[
     }, [isOpen]);
 
     return (
-        <nav className="w-full h-full p-4 z-100">
+        <nav className="w-full h-full p-4 z-100 theme-body">
             {/* Show Social on "/" */}
             {location.pathname === "/" && (
-                <div className="absolute flex top-4 flex-col gap-4 mt-1 left-4 text-white">
+                <div className="absolute flex top-4 flex-col gap-4 mt-1 left-4">
                     {infoItems.map(({ name, icon, path }) => (
                         <Link key={name} to={path} onClick={() => setIsOpen(false)} className="block hover:opacity-60 transition-opacity duration-200">
                             {icon}
@@ -67,27 +67,27 @@ const MobileNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[
                                 e.stopPropagation();
                                 setIsOpen(false);
                             }}
-                            className="fixed top-4 right-4 z-50 text-white text-3xl"
+                            className="fixed top-4 right-4 z-50 text-3xl"
                             aria-label="Close menu"
                         >
                             <FaTimes />
                         </button>
                         <div
                             id="mobile-menu"
-                            className="mobile-menu flex flex-col items-center gap-6 text-white transition-transform duration-300 ease-in-out"
+                            className="mobile-menu flex flex-col items-center gap-6 transition-transform duration-300 ease-in-out"
                             onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside
                         >
                             {/* Page Links */}
                             {pageItems.map(({ name, path }) => (
-                                <Link key={name} to={path} onClick={() => setIsOpen(false)} className="theme-body hover:opacity-60 transition-opacity duration-200" style={{ fontSize: "1.25rem" }}>
+                                <Link key={name} to={path} onClick={() => setIsOpen(false)} style={{ fontSize: "1.25rem" }}>
                                     {name}
                                 </Link>
                             ))}
 
-                            <div className="flex flex-col gap-5 mt-5 pt-5 text-white">
+                            <div className="flex flex-col gap-5 mt-5 pt-5">
                                 {infoItems.map(({ name, icon, path }) => (
-                                    <Link key={name} to={path} onClick={() => setIsOpen(false)} className="block hover:opacity-60 transition-opacity duration-200">
-                                        {icon}
+                                    <Link key={name} to={path} onClick={() => setIsOpen(false)} className="m-auto">
+                                        {name}
                                     </Link>
                                 ))}
                             </div>

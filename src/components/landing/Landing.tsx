@@ -21,14 +21,14 @@ const Landing = () => {
 
             <Hero />
 
+            <div className="hidden md:block">
+                <Separator />
+            </div>
+
             {/* Image 
             <div className="flex items-center justify-center w-1/2 md:w-1/3 lg:w-1/5 m-auto rounded-xl">
                 <img src={process.env.PUBLIC_URL + "/profile1.jpg"} alt="Profile Picture" className="w-full h-full object-cover rounded-lg" />{" "}
             </div>*/}
-
-            <div className="hidden md:block">
-                <Separator />
-            </div>
 
             <Highlights />
 

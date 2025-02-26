@@ -31,19 +31,22 @@ const GroupedSkills = () => {
     ];
 
     return (
-        <div className="theme-body m-auto grid grid-cols-1 xl:grid-cols-2 w-4/5 md:w-2/3 gap-24">
-            {skillGroups.map((group, index) => (
-                <div key={index} className="flex flex-col gap-4 md:gap-6 ">
-                    <h3 className="theme-subtitle text-center">{group.title}</h3>
-                    <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
-                        {group.skills.map((name, i) => (
-                            <TagIcon key={i} iconName={name} />
-                        ))}
+        <>
+            <h2 className="theme-title text-center md:pb-10">My Disciplines</h2>
+            <div className="theme-body m-auto grid grid-cols-1 xl:grid-cols-2 w-4/5 md:w-2/3 gap-16 md:gap-24">
+                {skillGroups.map((group, index) => (
+                    <div key={index} className="flex flex-col gap-4 md:gap-6 ">
+                        <h3 className="theme-subtitle text-center">{group.title}</h3>
+                        <div className="flex flex-wrap gap-2 md:gap-3 justify-center">
+                            {group.skills.map((name, i) => (
+                                <TagIcon key={i} iconName={name} />
+                            ))}
+                        </div>
+                        <p className="theme-muted">{group.body}</p>
                     </div>
-                    <p className="theme-muted">{group.body}</p>
-                </div>
-            ))}
-        </div>
+                ))}
+            </div>
+        </>
     );
 };
 

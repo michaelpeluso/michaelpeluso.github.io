@@ -64,7 +64,7 @@ export const PageBuilder: React.FC<{ items: PageItem[] }> = ({ items }) => {
     return (
         <div className="max-w-5xl mx-auto p-12 md:p-10">
             {sections.map((section, index) => (
-                <div key={index} className="pt-10 ">
+                <div key={index} className="pt-10" id={typeof section.title === "string" ? section.title.replace(/\s+/g, "").toLowerCase() : `section-${index}`}>
                     {section.title && <h1 className="theme-title">{section.title}</h1>}
                     {section.bodies.map((body, i) => (
                         <p key={i} className="theme-body">
@@ -114,7 +114,7 @@ const SubtitleSection: React.FC<SubtitleSectionProps> = ({ subtitleItem }) => {
     }, []);
 
     return (
-        <div ref={sectionRef} className="relative flex flex-col gap-4 my-20">
+        <div ref={sectionRef} className="relative flex flex-col gap-4 my-20" id={typeof subtitleItem.subtitle === "string" ? subtitleItem.subtitle.replace(/\s+/g, "").toLowerCase() : ""}>
             {/* Subtitle */}
             <div className="flex flex-col pl-6">
                 <h2 className="theme-subtitle ">

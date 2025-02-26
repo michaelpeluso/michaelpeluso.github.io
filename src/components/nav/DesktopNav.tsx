@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { CircleIcon } from "@radix-ui/react-icons";
+import { CircleIcon, FontSizeIcon } from "@radix-ui/react-icons";
 
 const DesktopNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[] }) => {
     const location = useLocation();
@@ -9,8 +9,11 @@ const DesktopNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any
             {/* Socials */}
             <div className="absolute top-2 h-full flex flex-col items-center gap-6 p-4">
                 {infoItems.map(({ name, icon, path }) => (
-                    <a key={name} href={path} target="_blank" rel="noopener noreferrer" className="theme-link">
+                    <a key={name} href={path} target="_blank" rel="noopener noreferrer" className="theme-link relative group flex items-center">
                         {icon}
+                        <span className="z-0 absolute text-body left-0 opacity-0 transform translate-x-6 group-hover:opacity-100 group-hover:translate-x-7 transition-all duration-300 pointer-events-none " style={{ fontSize: "1rem" }}>
+                            {name}
+                        </span>
                     </a>
                 ))}
             </div>

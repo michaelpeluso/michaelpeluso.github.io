@@ -135,6 +135,7 @@ const Content: PageItem[] = [
     },
 
     { type: "title", text: "University" },
+
     { type: "subtitle", text: "Georgia Institute of Technology", snippet: "Sept 2025 - Present" },
     {
         type: "body",
@@ -145,6 +146,8 @@ const Content: PageItem[] = [
                         <span className="theme-body">Master of Science in Computer Science</span>
                         <br />
                         Current Student
+                        <br />
+                        Online & part-time
                         <br />
                     </p>
                 </div>
