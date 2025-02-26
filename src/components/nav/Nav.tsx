@@ -9,7 +9,7 @@ import { FaEnvelope, FaFileAlt } from "react-icons/fa";
 const pageItems = [
     { name: "Home", path: "/" },
     //{ name: "About", path: "/about" },
-    { name: "Projects", path: "/portfolio" },
+    { name: "Portfolio", path: "/portfolio" },
     { name: "Career", path: "/career" },
     //{ name: "Shelf", path: "/shelf" },
 ];
@@ -19,7 +19,7 @@ const infoItems = [
     { name: "Github", icon: <SiGithub />, path: "https://github.com/michaelpeluso" },
     { name: "Handshake", icon: <SiHandshake />, path: "https://njit.joinhandshake.com/profiles/bdzs5d" },
     { name: "Contact", icon: <FaEnvelope />, path: "mailto:mfpel29@gmail.com" },
-    { name: "Resume", icon: <FaFileAlt />, path: `${process.env.PUBLIC_URL}/Michael_Peluso_Resume.pdf` },
+    { name: "Resume", icon: <FaFileAlt />, path: "/Michael_Peluso_Resume.pdf" },
 ];
 
 const Nav = () => {
