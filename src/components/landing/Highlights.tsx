@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import SpecialContainer from "../basic/SpecialContainer";
 import SkillRadar from "./SkillRadar";
 

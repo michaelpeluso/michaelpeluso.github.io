@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { CircleIcon, FontSizeIcon } from "@radix-ui/react-icons";
+import { CircleIcon } from "@radix-ui/react-icons";
 
 const DesktopNav = ({ pageItems, infoItems }: { pageItems: any[]; infoItems: any[] }) => {
     const location = useLocation();

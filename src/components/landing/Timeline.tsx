@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import PageBuilder from "../basic/PageBuilder";
 
 const timelineItems = [
     {

@@ -1,5 +1,5 @@
 import { PageBuilder, PageItem } from "../basic/PageBuilder";
-import { iconsMap, TagIcon } from "../basic/TagIcon";
+import { TagIcon } from "../basic/TagIcon";
 
 const Tags: React.FC<{ tags: string[] }> = ({ tags }) => {
     return (
