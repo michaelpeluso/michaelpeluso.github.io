@@ -25,7 +25,7 @@ const GroupedSkills = () => {
         },
         {
             title: "Data Management",
-            skills: ["MongoDB", "MySQL", "OracleSQL", "Postgres", "phpMyAdmin"],
+            skills: ["MongoDB", "MySQL", "OracleSQL", "Postgres", "phpMyAdmin", "Sqlite"],
             body: "With extensive coursework in database systems management, I can confidently integrate a variety of popular databases into my projects using many different popular programming languages.",
         },
     ];
