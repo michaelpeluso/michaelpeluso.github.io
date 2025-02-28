@@ -16,18 +16,11 @@ const Highlights = () => {
                 <div className="flex flex-col lg:flex-row justify-between px-5 items-center">
                     <div>
                         <div className="theme-muted text-left flex flex-col gap-3 mb-7 text-md md:text-lg lg:text-xl">
-                            <li className="text-body">
-                                Pursuing a Master's in <span className="text-body ">Computer Science</span> at Georgia Tech
-                            </li>
-                            <li className="text-body">
-                                Earned a Bachelor's in <span className="text-body">Information Technology</span> from NJIT
-                            </li>
-                            <li className="text-body">
-                                Graduated early with <span className="text-body">Honors</span>, earning 2 minors
-                            </li>
-                            <li className="text-body">
-                                Secured <span className="text-body">5</span> tech internships
-                            </li>
+                            <li className="text-body">Optimized AI models for NASA satellite solutions</li>
+                            <li className="text-body">Pursuing a Master's in Computer Science at Georgia Tech</li>
+                            <li className="text-body">Earned a Bachelor's in Information Technology from NJIT</li>
+                            <li className="text-body">Graduated early with Honors, earning 2 minors</li>
+                            <li className="text-body">Secured 5 tech internships</li>
                         </div>
                     </div>
                     <div className="flex flex-col justify-center">
