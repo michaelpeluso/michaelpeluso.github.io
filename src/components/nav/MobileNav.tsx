@@ -33,7 +33,7 @@ const MobileNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageIte
     }, [isOpen]);
 
     return (
-        <nav className="w-full h-full p-4 z-100 theme-body">
+        <nav className={`w-full h-full p-4 z-100 ${isLightMode && " text-background-light"}`}>
             {/* Show Social on "/" */}
             {location.pathname === "/" && (
                 <div className="absolute flex top-4 flex-col gap-4 mt-1 left-4">
@@ -52,7 +52,7 @@ const MobileNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageIte
                         e.stopPropagation(); // Prevents click event from propagating
                         setIsOpen(!isOpen);
                     }}
-                    className="text-body mobile-menu text-3xl focus:outline-none"
+                    className={`text-3xl focus:outline-none ${isLightMode && " text-body"}`}
                     aria-label="Toggle menu"
                     aria-expanded={isOpen}
                     aria-controls="mobile-menu"
@@ -62,7 +62,7 @@ const MobileNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageIte
 
                 {/* Mobile Menu Overlay */}
                 {isOpen && (
-                    <div className="fixed inset-0 bg-background/75 mobile-menu backdrop-blur-lg flex items-center justify-center">
+                    <div className="fixed inset-0 bg-background/75 backdrop-blur-lg flex items-center justify-center z-100">
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -75,7 +75,7 @@ const MobileNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageIte
                         </button>
                         <div
                             id="mobile-menu"
-                            className="mobile-menu flex flex-col items-center gap-6 transition-transform duration-300 ease-in-out"
+                            className="flex flex-col items-center gap-6 transition-transform duration-300 ease-in-out"
                             onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside
                         >
                             {/* Page Links */}
@@ -87,19 +87,15 @@ const MobileNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageIte
 
                             <div className="flex flex-col gap-5 mt-5 pt-5">
                                 {infoItems.map(({ name, icon, path }) => (
-                                    <Link key={name} to={path} onClick={() => setIsOpen(false)} className="m-auto">
+                                    <Link key={name} to={path} className="m-auto" onClick={() => setIsOpen(false)}>
                                         {name}
                                     </Link>
                                 ))}
                             </div>
 
-                            {/* Theme Toggle Icon (Sun/Moon) */}
+                            {/* Theme Toggle */}
                             <div className="mt-6 cursor-pointer" onClick={toggleTheme}>
-                                {isLightMode ? (
-                                    <FaMoon className="w-6 h-6 text-body-light mobile-menu" /> // Moon icon for light mode
-                                ) : (
-                                    <FaSun className="w-6 h-6 text-body" /> // Sun icon for dark mode
-                                )}
+                                {isLightMode ? <FaMoon className="w-6 h-6" /> : <FaSun className="w-6 h-6 text-body" />}
                             </div>
                         </div>
                     </div>

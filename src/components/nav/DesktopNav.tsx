@@ -31,7 +31,7 @@ const DesktopNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageIt
                                         <CircleIcon className="w-5 h-5 text-primary" />
                                     ) : (
                                         <Link to={path} className="theme-link" style={{ textDecoration: "none" }}>
-                                            <span>{name}</span>
+                                            {name}
                                         </Link>
                                     )}
                                 </li>
@@ -41,8 +41,11 @@ const DesktopNav = ({ pageItems, infoItems, isLightMode, toggleTheme }: { pageIt
                 </div>
             </nav>
             {/* Theme Toggle */}
-            <div className="fixed bottom-4 left-4 cursor-pointer" onClick={toggleTheme}>
-                {isLightMode ? <FaMoon className="w-6 h-6 text-body-light" /> : <FaCircle className="w-6 h-6 text-body" />}
+            <div className="fixed bottom-4 left-4 cursor-pointer group flex items-center" onClick={toggleTheme}>
+                {isLightMode ? <FaMoon className="w-6 h-6 group-hover:text-primary" /> : <FaCircle className="w-6 h-6 duration-300 group-hover:text-primary" />}
+                <span className="z-0 absolute  left-1 opacity-0 transform translate-x-6 group-hover:opacity-100 group-hover:translate-x-7 transition-all duration-300 pointer-events-none " style={{ fontSize: "1rem" }}>
+                    {isLightMode ? "Dark" : "Light"}
+                </span>
             </div>
         </>
     );
