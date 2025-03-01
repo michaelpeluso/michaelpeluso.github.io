@@ -7,17 +7,21 @@ import About from "./components/about/About";
 import Career from "./components/career/Career";
 import Portfolio from "./components/portfolio/Portfolio";
 
-function ScrollToElement() {
-    const { hash } = useLocation();
+function ScrollHandler() {
+    const { pathname, hash } = useLocation();
 
     useEffect(() => {
         if (hash) {
-            const element = document.getElementById(hash.replace("#", ""));
-            if (element) {
-                element.scrollIntoView({ behavior: "auto", block: "start" });
-            }
+            setTimeout(() => {
+                const element = document.getElementById(hash.replace("#", ""));
+                if (element) {
+                    element.scrollIntoView({ behavior: "auto", block: "start" });
+                }
+            }, 0);
+        } else {
+            window.scrollTo(0, 0);
         }
-    }, [hash]);
+    }, [pathname, hash]);
 
     return null;
 }
@@ -25,7 +29,7 @@ function ScrollToElement() {
 const App: React.FC = () => {
     return (
         <Router>
-            <ScrollToElement />
+            <ScrollHandler />
             <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/about" element={<About />} />
