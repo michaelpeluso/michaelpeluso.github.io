@@ -86,7 +86,7 @@ export default function Timeline() {
                             <div className="absolute md:hidden items-center justify-center w-5 h-5 rounded-full z-10 -ml-2 border-[3px] border-primary bg-background" />
                             {/* Content */}
                             <Link
-                                to={`/${item.page}#${item.title.replace(/\s+/g, "").toLowerCase()}`}
+                                to={`/${item.page.toLowerCase()}#${item.title.toLowerCase().replace(/\s+/g, "")}`}
                                 className={`peer w-[1000%] md:w-5/12 pl-7 md:p-4 rounded-xl duration-200 md:hover:bg-shadow ${item.side === "left" ? "md:text-right" : "text-left md:translate-x-[140%]"} ${i % 2 === 0 ? "mt-8" : "mt-0"}`}
                                 style={{ marginTop: 0 }}
                             >
