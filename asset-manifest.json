@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.70f76299.css",
-    "main.js": "/static/js/main.ce696616.js",
+    "main.css": "/static/css/main.d3202dc7.css",
+    "main.js": "/static/js/main.bcb9ecec.js",
     "static/js/453.41811d64.chunk.js": "/static/js/453.41811d64.chunk.js",
     "static/media/git-guru.png": "/static/media/git-guru.b8fbe1fa12e1207b41a9.png",
     "static/media/book-quest.png": "/static/media/book-quest.5e4c3ba9c9d3e17f613e.png",
@@ -21,12 +21,12 @@
     "static/media/roboto-greek-ext-400-normal.woff2": "/static/media/roboto-greek-ext-400-normal.1df4abad55796d11a0c8.woff2",
     "index.html": "/index.html",
     "static/media/roboto-greek-ext-400-normal.woff": "/static/media/roboto-greek-ext-400-normal.16eb83b4a3b1ea994243.woff",
-    "main.70f76299.css.map": "/static/css/main.70f76299.css.map",
-    "main.ce696616.js.map": "/static/js/main.ce696616.js.map",
+    "main.d3202dc7.css.map": "/static/css/main.d3202dc7.css.map",
+    "main.bcb9ecec.js.map": "/static/js/main.bcb9ecec.js.map",
     "453.41811d64.chunk.js.map": "/static/js/453.41811d64.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.70f76299.css",
-    "static/js/main.ce696616.js"
+    "static/css/main.d3202dc7.css",
+    "static/js/main.bcb9ecec.js"
   ]
 }
