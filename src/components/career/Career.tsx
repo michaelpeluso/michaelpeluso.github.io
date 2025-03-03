@@ -34,7 +34,7 @@ const Content: PageItem[] = [
                         Automated AI-driven, player video analysis with <span className="text-primary">AWS</span> Lambda, SageMaker, Rekognition, and OpenAI using facial and jersey recognition.
                         <br />
                         <br />
-                        Developed 18 API routes with Postman, connecting MongoDB and AWS services for efficient data pipelining."
+                        Developed 18 API routes with Postman, connecting MongoDB and AWS services for efficient data pipelining.
                     </p>
                 </div>
             </>
