@@ -8,7 +8,7 @@ const pinnedProjects = [
     {
         title: "Book Quest",
         date: "May 2024",
-        description: "A multi-environment, Linux-based web system designed with distributed architecture, featuring message queue integration, automated provisioning, and cluster-based deployment.",
+        description: "A multi-environment, Linux-based web system designed with a distributed architecture, featuring message queue integration, automated provisioning, and cluster-based deployment.",
         tags: ["JavaScript", "PHP", "phpMyAdmin", "Linux", "RabbitMQ"],
         link: "https://github.com/IT490-Tech-Team/IT490-Project",
         image: require("../../assets/images/pinned-projects/book-quest.png"),
