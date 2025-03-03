@@ -57,7 +57,7 @@ const Content: PageItem[] = [
                         Reduced API costs by <span className="text-primary">50%</span> through prompt engineering, batch processing, and fine-tuning while ensuring deterministic AI results.
                         <br />
                         <br />
-                        Implemented <span className="text-primary">NLP</span>-driven resource management using OpenAI’s ChatGPT and Python libraries like Pandas, NumPy, and Matplotlib.
+                        Implemented NLP-driven resource management using OpenAI’s ChatGPT and <span className="text-primary">Python</span> libraries like Pandas, NumPy, and Matplotlib.
                         <br />
                     </p>
                 </div>
