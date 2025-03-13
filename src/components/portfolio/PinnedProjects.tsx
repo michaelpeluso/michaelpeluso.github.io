@@ -22,7 +22,7 @@ const pinnedProjects = [
         image: require("../../assets/images/pinned-projects/git-guru.png"),
     },
     {
-        title: "Wallet Network",
+        title: "Secret Storage",
         date: "Jul 2024",
         description: "Exploratory project of authentication and security practices, utilizing PostgreSQL, involving user registration, encryption, hashing, salting, cookie and session, and OAuth implementations.",
         tags: ["JavaScript", "EJS", "Postgres"],
