@@ -20,15 +20,15 @@ const fullStackProjects = [
     },
     {
         title: "BookQuest",
-        alert: "featured",
         date: "May 2024",
         description: "A collaborative web application with a scalable Linux-based deployment system, multi-environment clustering, and efficient message queue handling.",
         link: "https://github.com/IT490-Tech-Team/IT490-Project",
     },
     {
         title: "Secret Storage",
+        alert: "featured",
         date: "Jul 2024",
-        description: "An in-depth exploration of web security, including registration, encryption, hashing, salting, cookie handling, and OAuth implementations.",
+        description: "Exploratory project of authentication and security practices, utilizing PostgreSQL, involving user registration, encryption, hashing, salting, cookie and session, and OAuth implementations.",
         link: "https://github.com/michaelpeluso/Secret-Storage",
     },
     {

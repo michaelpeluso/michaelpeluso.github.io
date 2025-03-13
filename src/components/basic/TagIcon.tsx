@@ -43,6 +43,7 @@ import {
     SiVmware,
     SiExpress,
     SiTypescript,
+    SiEjs,
 } from "react-icons/si";
 
 interface TagIconProps {
@@ -96,6 +97,7 @@ export const iconsMap: Record<string, React.FC<{ className?: string }>> = {
     VMware: SiVmware,
     Express: SiExpress,
     TypeScript: SiTypescript,
+    EJS: SiEjs,
 };
 
 export const TagIcon: React.FC<TagIconProps> = ({ iconName, onClick, className = "" }: { iconName: string; onClick?: React.MouseEventHandler<HTMLDivElement>; className?: string }) => {

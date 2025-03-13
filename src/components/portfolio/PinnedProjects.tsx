@@ -23,10 +23,10 @@ const pinnedProjects = [
     },
     {
         title: "Wallet Network",
-        date: "Dec 2024",
-        description: "A secure digital wallet equiped with seamless fund transfers, bank account integration, and real-time transaction management within a scalable financial system.",
-        tags: ["Python", "MySQL", "Flask"],
-        link: "https://github.com/michaelpeluso/Wallet-Netowrk",
+        date: "Jul 2024",
+        description: "Exploratory project of authentication and security practices, utilizing PostgreSQL, involving user registration, encryption, hashing, salting, cookie and session, and OAuth implementations.",
+        tags: ["JavaScript", "EJS", "Postgres"],
+        link: "https://github.com/michaelpeluso/Secret-Storage",
         image: require("../../assets/images/pinned-projects/wallet-network.png"),
     },
 ];

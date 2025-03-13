@@ -48,7 +48,8 @@ const SpecialContainer = ({ children, className }: ContainerProps) => {
             onMouseLeave={handleMouseLeave}
             style={{
                 transform: `perspective(1000px) rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) scale3d(1, 1, 1)`,
-                transition: "all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s",
+                transition: "transform 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s", // limit to transform
+                willChange: "transform", // hint browser for smoother repaint
             }}
         >
             <div
@@ -57,6 +58,7 @@ const SpecialContainer = ({ children, className }: ContainerProps) => {
                     border: "1px solid #6B7784",
                     opacity,
                     WebkitMaskImage: `radial-gradient(circle 100px at ${position.x}px ${position.y}px, black 50%, transparent 101%)`,
+                    willChange: "opacity, webkitMaskImage", // optimize mask updates
                 }}
             />
             <div className="relative z-10 w-full">{children}</div>
