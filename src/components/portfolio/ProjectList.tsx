@@ -104,7 +104,7 @@ const frontEndProjects = [
         alert: "new",
         date: "Feb 2025",
         description: "An online portfolio showcasing my skills, work, and experience, built with React and Tailwind CSS. (hint: you're looking at it)",
-        link: "https://michaelpeluso.github.io/",
+        link: "https://github.com/michaelpeluso/michaelpeluso.github.io",
     },
     {
         title: "The Guitar Shop",
